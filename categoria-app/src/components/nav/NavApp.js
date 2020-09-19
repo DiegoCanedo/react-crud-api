@@ -8,7 +8,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStore } from "@fortawesome/free-solid-svg-icons";
+import { faUser} from "@fortawesome/free-solid-svg-icons";
 
 import {
   BrowserRouter as Router,
@@ -32,9 +32,7 @@ export default function NavApp() {
           className="justify-content-center"
         >
           <Nav className="">
-            <Nav.Link as={Link} to="/produtos">
-              Produtos
-            </Nav.Link>
+           
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item href="#categorias/3.1">
                 Eletrônicos
@@ -50,20 +48,32 @@ export default function NavApp() {
                 Promoções
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link as={Link} to="/cadastrar">
+              Cadastrar
+            </Nav.Link>
+            <Nav.Link as={Link} to="/atualizar">
+              Atualizar
+            </Nav.Link>
+            <Nav.Link as={Link} to="/deletar">
+              Deletar
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link className={styles.store} to="/carrinho">
-          <FontAwesomeIcon icon={faStore} />
+        <Link className={styles.store} to="/login">
+          <FontAwesomeIcon icon={faUser} />
         </Link>
       </Navbar>
       <Container>
         <Switch>
-          <Route path="/produtos"></Route>
-          <Route path="/carrinho">
-            <Produtos />
+         
+          <Route path="/cadastrar">
+            <Cadastrar />
           </Route>
-          <Route path="/categorias">
-            <Categorias />
+          <Route path="/atualizar">
+            <Atualizar />
+          </Route>
+          <Route path="/Deletar">
+            <Deletar />
           </Route>
           <Route path="/">
             <Home />
@@ -78,10 +88,14 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-function Produtos() {
-  return <h2>Produtos</h2>;
+function Cadastrar() {
+  return <h2>Cadastro</h2>;
 }
 
-function Categorias() {
-  let { path, url } = useRouteMatch();
+function Atualizar() {
+  return <h2>Atualizar</h2>;
+}
+
+function Deletar() {
+  return <h2>Deletar</h2>;
 }
