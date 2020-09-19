@@ -1,0 +1,5 @@
+.store{
+    display: flex;
+    justify-content: flex-end!important;
+    width: 10rem;
+}
