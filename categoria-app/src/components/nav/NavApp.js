@@ -8,15 +8,13 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser} from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
-  useRouteMatch,
+  Link
 } from "react-router-dom";
 
 export default function NavApp() {
@@ -32,7 +30,6 @@ export default function NavApp() {
           className="justify-content-center"
         >
           <Nav className="">
-           
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <NavDropdown.Item href="#categorias/3.1">
                 Eletrônicos
@@ -65,7 +62,6 @@ export default function NavApp() {
       </Navbar>
       <Container>
         <Switch>
-         
           <Route path="/cadastrar">
             <Cadastrar />
           </Route>
