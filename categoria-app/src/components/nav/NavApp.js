@@ -10,12 +10,8 @@ import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Card } from "../Card/Card";
 
 export default function NavApp() {
   return (
@@ -45,7 +41,7 @@ export default function NavApp() {
                 Promoções
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/cadastrar">
+            <Nav.Link as={Link} to="/listar">
               Cadastrar
             </Nav.Link>
             <Nav.Link as={Link} to="/atualizar">
@@ -62,8 +58,13 @@ export default function NavApp() {
       </Navbar>
       <Container>
         <Switch>
-          <Route path="/cadastrar">
-            <Cadastrar />
+          <Route path="/listar">
+              <Card>
+                  <Card.Image src="listar.png"/>
+                  <Card.Form>
+                    <p>TESTE FORM</p>
+                  </Card.Form>
+              </Card>
           </Route>
           <Route path="/atualizar">
             <Atualizar />
@@ -82,10 +83,6 @@ export default function NavApp() {
 
 function Home() {
   return <h2>Home</h2>;
-}
-
-function Cadastrar() {
-  return <h2>Cadastro</h2>;
 }
 
 function Atualizar() {
