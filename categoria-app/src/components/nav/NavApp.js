@@ -68,7 +68,12 @@ export default function NavApp() {
               </Card>
           </Route>
           <Route path="/atualizar">
-            <Atualizar />
+            <Card>
+                  <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
+                  <Card.Form>
+                   <ListarCategoria/>
+                  </Card.Form>
+              </Card>
           </Route>
           <Route path="/Deletar">
             <Deletar />
