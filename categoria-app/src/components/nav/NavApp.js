@@ -12,6 +12,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
+import ListarCategoria from "../Categoria/Listar/Listar";
 
 export default function NavApp() {
   return (
@@ -60,9 +61,9 @@ export default function NavApp() {
         <Switch>
           <Route path="/listar">
               <Card>
-                  <Card.Image src="listar.png"/>
+                  <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
                   <Card.Form>
-                    <p>TESTE FORM</p>
+                   <ListarCategoria/>
                   </Card.Form>
               </Card>
           </Route>

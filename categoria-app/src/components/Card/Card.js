@@ -6,7 +6,6 @@ export function Card({classes, children, ...restProps}){
     return (
         <Container className={classNames('card', classes)} {...restProps}>
             {children}
-            <p>teste</p>
         </Container>
     )
 }
