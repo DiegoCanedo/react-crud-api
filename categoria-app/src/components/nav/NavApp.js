@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./NavApp.css";
+import "./NavApp.css";
 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/NavBar";
@@ -53,11 +53,11 @@ export default function NavApp() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link className={styles.store} to="/login">
+        <Link className='store' to="/login">
           <FontAwesomeIcon icon={faUser} />
         </Link>
       </Navbar>
-      <Container>
+      <Container className='pt50'>
         <Switch>
           <Route path="/listar">
               <Card>
