@@ -9,15 +9,14 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+import ScrollUpButton from "react-scroll-up-button";
+
 export const Footer = () => {
     return (
         <Router>
             <div className="fixed-bottom footer mt-auto pt-3 text-muted">  
                 <Container>
-                    <Link className="float-right back-to-top rounded-circle" to="#">
-                        <FontAwesomeIcon icon={faChevronUp} />
-                        <span class="sr-only">Voltar ao topo</span>
-                    </Link>
+                    <ScrollUpButton />
                     <p className="text-center">&copy; 2020 - Marketplace</p>
                 </Container>
             </div>
@@ -26,5 +25,3 @@ export const Footer = () => {
 }
 
 export default Footer;
-
-
