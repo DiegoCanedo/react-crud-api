@@ -13,5 +13,6 @@ const incluir = (data) => {
 };
 
 export default {
-    listarTodos
+    listarTodos,
+    incluir
 };
