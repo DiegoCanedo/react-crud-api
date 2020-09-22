@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from "react";
 import CategoriaService from "../../../services/CategoriaService";
-import Table from "react-bootstrap/Table";
+import { Container, Info, ContainerTitle, ContainerButtons, Title, Descricao, Action } from "./styles";
 
-import "./style.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Listar = () => {
-  
   const [lista, setLista] = useState([]);
 
   useEffect(() => {
-      CategoriaService.listarTodos()
-      .then(response => {
-          setLista(response.data);
+    CategoriaService.listarTodos()
+      .then((response) => {
+        setLista(response.data);
       })
-      .catch(error => console.log(error));
-  },[]);
+      .catch((error) => console.log(error));
+  }, []);
 
-  return(
-  <div className="tableFixHead">
-    <Table responsive striped bordered hover size="sm">
-      <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-        </tr>
-      </thead>
-      <tbody>
-        {lista.map((c, index) => (
-            <tr key={index}>
-                <td>{c.id}</td>
-                <td>{c.nome}</td>
-            </tr>
-        ))}
-      </tbody>
-    </Table>
-  </div>);
+  return (
+    <>
+      {lista.map((c, index) => (
+        <Info key={index}>
+          <ContainerTitle>
+            <ContainerButtons>
+              <Action>
+                <FontAwesomeIcon icon={faEdit} />
+              </Action>
+              <Action>
+                <FontAwesomeIcon icon={faTrash} />
+              </Action>
+            </ContainerButtons>
+            <Title>{c.nome}</Title>
+          </ContainerTitle>
+          <Descricao>{c.descricao}</Descricao>
+        </Info>
+      ))}
+      </>
+  );
 };
 
 export default Listar;

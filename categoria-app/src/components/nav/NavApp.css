@@ -3,3 +3,7 @@
     justify-content: flex-end!important;
     width: 10rem;
 }
+
+.pt50{
+    padding-top: 50px !important;
+}

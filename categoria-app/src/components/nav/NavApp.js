@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./NavApp.css";
+import "./NavApp.css";
 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/NavBar";
@@ -13,6 +13,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
+import Cadastrar from "../../pages/categoria/Criar/index";
+import { Button } from "react-bootstrap";
 
 export default function NavApp() {
   return (
@@ -53,25 +55,34 @@ export default function NavApp() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link className={styles.store} to="/login">
+        <Link className='store' to="/login">
           <FontAwesomeIcon icon={faUser} />
         </Link>
       </Navbar>
-      <Container>
+      <Container className='pt50'>
         <Switch>
           <Route path="/listar">
               <Card>
+                  <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
+                  <Card.Form>
+                    <Card.Button onClick=""/>
+                   <ListarCategoria/>
+                  </Card.Form>
+              </Card>
+          </Route>
+          <Route path="/atualizar">
+            <Card>
                   <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
                   <Card.Form>
                    <ListarCategoria/>
                   </Card.Form>
               </Card>
           </Route>
-          <Route path="/atualizar">
-            <Atualizar />
-          </Route>
           <Route path="/Deletar">
             <Deletar />
+          </Route>
+          <Route path="/Cadastrar">
+            <Cadastrar />
           </Route>
           <Route path="/">
             <Home />
