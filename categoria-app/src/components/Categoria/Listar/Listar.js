@@ -25,7 +25,7 @@ const Listar = () => {
               <Action>
                 <FontAwesomeIcon icon={faEdit} />
               </Action>
-              <Action>
+              <Action href={`/deletar/${c.id}`}> 
                 <FontAwesomeIcon icon={faTrash} />
               </Action>
             </ContainerButtons>
