@@ -1,0 +1,39 @@
+.quickview {
+    padding: 95px 0 124px;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #354b60 50%, #5d6f80 50%);
+}
+
+
+.quickview .head-title {
+    display: inline-block;
+    width: 100%;
+}
+
+.quickview .head-title .title-page {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 17px;
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: -0.025em;
+    text-transform: capitalize;
+}
+
+.quickview .head-title .description {
+    margin: 0 0 44px;
+    padding-top: 0;
+    color: #707070;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.quickview .head-title .description.right {
+    margin-right: 0;
+    margin-left: 25%;
+}
+
+.quickview .head-title .description:not(.right) { color: #fff; }
+
+
+.quickview img { width: 88%; }

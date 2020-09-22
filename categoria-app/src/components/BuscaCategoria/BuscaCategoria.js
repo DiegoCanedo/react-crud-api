@@ -15,7 +15,6 @@ const BuscaCategoria = () => {
             .catch((error) => console.log(error));
     }, []);
 
-
     return (
         <div>
             <section className="search-category py-5">
