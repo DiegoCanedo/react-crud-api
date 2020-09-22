@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from '../../../services/CategoriaService';
+//import Service from '../../../services/CategoriaService';
 import { Container, Form, Input, Salvar } from './styles';
 
 
