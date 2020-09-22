@@ -55,6 +55,9 @@ export default function NavApp() {
                                 ))}
                             </NavDropdown>
                             <Nav.Link as={Link} to="/listar">
+                                Listar
+                            </Nav.Link>
+                            <Nav.Link as={Link} to="/cadastrar">
                                 Cadastrar
                             </Nav.Link>
                             <Nav.Link as={Link} to="/atualizar">
