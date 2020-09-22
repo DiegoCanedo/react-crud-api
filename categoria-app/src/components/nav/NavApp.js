@@ -13,6 +13,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
+import Cadastrar from "../../pages/categoria/Criar/index";
+import { Button } from "react-bootstrap";
 
 export default function NavApp() {
   return (
@@ -63,6 +65,7 @@ export default function NavApp() {
               <Card>
                   <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
                   <Card.Form>
+                    <Card.Button onClick=""/>
                    <ListarCategoria/>
                   </Card.Form>
               </Card>
@@ -77,6 +80,9 @@ export default function NavApp() {
           </Route>
           <Route path="/Deletar">
             <Deletar />
+          </Route>
+          <Route path="/Cadastrar">
+            <Cadastrar />
           </Route>
           <Route path="/">
             <Home />

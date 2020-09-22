@@ -23,3 +23,9 @@ Card.Image = function CardImage({src, classes,  ...restProps}){
         <Image src={src} className={classNames('card__image', classes)} {...restProps}/>
     )
 }
+
+Card.Button = function CardButton({classes,  ...restProps}){
+    return(
+        <Button className={classNames('card__button', classes)} {...restProps}/>
+    )
+}
