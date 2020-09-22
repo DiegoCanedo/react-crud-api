@@ -1,3 +1,5 @@
+.bg-header { background-color: #354b60; }
+
 .store{
     display: flex;
     justify-content: flex-end!important;
