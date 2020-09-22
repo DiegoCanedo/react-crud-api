@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import CategoriaService from "../../../services/CategoriaService";
 import { Container, Info, ContainerTitle, ContainerButtons, Title, Descricao, Action } from "./styles";
 
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
@@ -25,7 +27,7 @@ const Listar = () => {
               <Action>
                 <FontAwesomeIcon icon={faEdit} />
               </Action>
-              <Action href={`/deletar/${c.id}`}> 
+              <Action as={Link} to={{pathname: '/deletar', state: c.id}}> 
                 <FontAwesomeIcon icon={faTrash} />
               </Action>
             </ContainerButtons>
