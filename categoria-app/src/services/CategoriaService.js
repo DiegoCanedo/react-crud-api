@@ -18,5 +18,5 @@ const atualizar = (id, data) => {
 
 export default {
     listarTodos,
-    atualizar
+    atualizar,
 };
