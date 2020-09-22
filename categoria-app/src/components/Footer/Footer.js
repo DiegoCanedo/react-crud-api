@@ -5,10 +5,10 @@ import NavbarBrand from 'react-bootstrap/NavbarBrand';
 import Container from 'react-bootstrap/Container';
 
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <div className="fixed-bottom">  
-        <Navbar color="dark" dark>
+        <Navbar color="dark">
             <Container>
                 <NavbarBrand>Footer</NavbarBrand>
             </Container>
