@@ -13,10 +13,10 @@ export const Container = styled.div`
 `;
 export const Form = styled.div`
   padding: 30px;
-  width: 100%;
+  width: 50%;
 `;
 export const Image = styled.img`
-  width: 100%;
+  width: 50%;
 `;
 export const Button = styled.button`
     cursor: pointer;
