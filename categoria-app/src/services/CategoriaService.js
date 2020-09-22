@@ -12,6 +12,11 @@ const incluir = (data) => {
     return http.post(`/categoria`, data);
 };
 
+const atualizar = (id, data) => {
+    return http.put(`/categoria/${id}`, data);
+};
+
 export default {
-    listarTodos
+    listarTodos,
+    atualizar
 };

@@ -15,6 +15,7 @@ import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Criar/index";
 import Home from "../../pages/home/index";
+import Atualizar from "../../pages/categoria/Atualizar/index";
 import { Button } from "react-bootstrap";
 
 export default function NavApp() {
@@ -77,7 +78,7 @@ export default function NavApp() {
             <Card>
                   <Card.Image src="https://metroui.org.ua/images/book_lover.svg"/>
                   <Card.Form>
-                   <ListarCategoria/>
+                   <Atualizar/>
                   </Card.Form>
               </Card>
           </Route>
@@ -93,10 +94,6 @@ export default function NavApp() {
         </Switch>
     </Router>
   );
-}
-
-function Atualizar() {
-  return <h2>Atualizar</h2>;
 }
 
 function Deletar() {
