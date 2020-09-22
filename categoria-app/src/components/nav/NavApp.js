@@ -12,13 +12,13 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
+import CategoriaService from "../../services/CategoriaService";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Criar/index";
 import Home from "../../pages/home/index";
-
-import CategoriaService from "../../services/CategoriaService";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -48,12 +48,11 @@ export default function NavApp() {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="navbar-nav mr-auto ml-md-5">
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/categorias/celulares">
-                                    Celulares
-                                </NavDropdown.Item>
                                 {lista.map((c, index) => (
-                                    <NavDropdown.Item key={index} href={c.id}>{c.nome}</NavDropdown.Item>
-                                    ))}
+                                    <NavDropdown.Item as={Link} to="#" key={index}>
+                                            {c.nome}
+                                    </NavDropdown.Item>
+                                ))}
                             </NavDropdown>
                             <Nav.Link as={Link} to="/listar">
                                 Cadastrar
@@ -71,7 +70,7 @@ export default function NavApp() {
                                 Lista de Desejos
                             </Nav.Link>
                             <Nav.Link as={Link} to="#">
-                                <FontAwesomeIcon icon={faUser} className="mr-1" /> 
+                                <FontAwesomeIcon icon={faUser} className="mr-1" />
                                 Entrar
                             </Nav.Link>
                             <Nav.Link as={Link} to="#">
