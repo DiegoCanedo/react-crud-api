@@ -1,6 +1,6 @@
+import React from 'react'
 import { Input, Salvar, Container, Form } from './styles';
 import Service from '../../../services/CategoriaService';
-import React from 'react'
 
 const index = () => {
     return (
