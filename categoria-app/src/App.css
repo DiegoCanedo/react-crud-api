@@ -71,7 +71,7 @@
   .carousel { display: none; }
 
   /** login **/
-  .login .form-signin h1 { font-size: 1.5rem; }
+  .form-signin h1 { font-size: 1.5rem; }
 
   /** error 404 **/
   .notfound h1 { margin-top: 200px !important; }
