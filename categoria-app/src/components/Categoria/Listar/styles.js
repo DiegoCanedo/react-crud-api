@@ -4,7 +4,7 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #2a265f;
+  background-color: #446392;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   max-width: 100%;
@@ -17,7 +17,7 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  background-color: #2a265f;
+  background-color: #333956;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   max-width: 100%;
