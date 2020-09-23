@@ -7,6 +7,9 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
 import Alert from "react-bootstrap/Alert";
 
+import Navbar from "react-bootstrap/NavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons"
 
 const Index = () => {
 
@@ -52,13 +55,17 @@ const Index = () => {
 
     return (
         <>
-            <Breadcrumb>
-                <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-                <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-                    Library
-                </Breadcrumb.Item>
-                <Breadcrumb.Item active>Data</Breadcrumb.Item>
-            </Breadcrumb>
+            <Navbar className="navbar navbar-dark bg-header bg-breadcrumb" expand="lg">
+                <Container>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="/"><FontAwesomeIcon icon={faHome} /></Breadcrumb.Item>
+                        <Breadcrumb.Item href="#">
+                            Categorias
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active>Cadastrar</Breadcrumb.Item>
+                    </Breadcrumb>
+                </Container>
+            </Navbar>
 
             <Container>
                 <Alert show={show} variant={variant}>{mensagem}</Alert>
