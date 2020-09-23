@@ -14,8 +14,10 @@ import Container from "react-bootstrap/Container";
 
 import { Link } from "react-router-dom";
 
+import Navbar from "react-bootstrap/NavBar";
+import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Listar = () => {
   const [lista, setLista] = useState([]);
@@ -51,31 +53,41 @@ const Listar = () => {
     }, 4000);
   };
 
-  return (
-    <>
-      <Alert show={show} variant={variant}>
-        {mensagem}
-      </Alert>
-      {lista.map((c, index) => (
-        <Container>
-          <Info key={index}>
-            <ContainerTitle>
-              <ContainerButtons>
-                <Action as={Link} to={`atualizar/${c.id}`}>
-                  <FontAwesomeIcon icon={faEdit} />
-                </Action>
                 <Action onClick={() => handleDeletar(c.id)}>
-                  <FontAwesomeIcon icon={faTrash} />
-                </Action>
-              </ContainerButtons>
-              <Title>{c.nome}</Title>
-            </ContainerTitle>
-            <Descricao>{c.descricao}</Descricao>
-          </Info>
-        </Container>
-      ))}
-    </>
-  );
+    return (
+        <>
+            <Navbar className="navbar navbar-dark bg-header bg-breadcrumb" expand="lg">
+                <Container>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="/"><FontAwesomeIcon icon={faHome} /></Breadcrumb.Item>
+                        <Breadcrumb.Item href="#">
+                            Categorias
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item active>Cadastrar</Breadcrumb.Item>
+                    </Breadcrumb>
+                </Container>
+            </Navbar>
+
+            {lista.map((c, index) => (
+                <Container>
+                    <Info key={index}>
+                        <ContainerTitle>
+                            <ContainerButtons>
+                                <Action as={Link} to={`atualizar/${c.id}`}>
+                                    <FontAwesomeIcon icon={faEdit} />
+                                </Action>
+                                <Action as={Link} to={`deletar/${c.id}`}>
+                                    <FontAwesomeIcon icon={faTrash} />
+                                </Action>
+                            </ContainerButtons>
+                            <Title>{c.nome}</Title>
+                        </ContainerTitle>
+                        <Descricao>{c.descricao}</Descricao>
+                    </Info>
+                </Container>
+            ))}
+        </>
+    );
 };
 
 export default Listar;
