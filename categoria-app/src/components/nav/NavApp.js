@@ -62,12 +62,6 @@ export default function NavApp() {
                             <Nav.Link as={Link} to="/cadastrar">
                                 Cadastrar
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/atualizar">
-                                Atualizar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/deletar">
-                                Deletar
-                            </Nav.Link>
                         </Nav>
                         <Nav className="navbar-nav my-2 my-lg-0">
                             <Nav.Link as={Link} to="#">
