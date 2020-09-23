@@ -12,6 +12,10 @@ const incluir = (data) => {
     return http.post(`/categoria`, data);
 };
 
+const atualizar = (id, data) => {
+    return http.get(`/categoria/${id}`, data);
+};
+
 const deletar = (id) => {
     return http.delete(`/categoria/${id}`);
 };
@@ -19,6 +23,7 @@ const deletar = (id) => {
 export default {
     listarTodos,
     incluir,
+    atualizar,
     deletar,
     listarID,
 };

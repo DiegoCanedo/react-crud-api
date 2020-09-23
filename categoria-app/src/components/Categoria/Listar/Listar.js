@@ -24,7 +24,7 @@ const Listar = () => {
         <Info key={index}>
           <ContainerTitle>
             <ContainerButtons>
-              <Action>
+              <Action as={Link} to={{pathname: '/atualizar', state: c.id}}>
                 <FontAwesomeIcon icon={faEdit} />
               </Action>
               <Action as={Link} to={{pathname: '/deletar', state: c.id}}> 
