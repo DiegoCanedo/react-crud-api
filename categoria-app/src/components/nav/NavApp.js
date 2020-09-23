@@ -62,12 +62,6 @@ export default function NavApp() {
                             <Nav.Link as={Link} to="/cadastrar">
                                 Cadastrar
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/atualizar">
-                                Atualizar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/deletar">
-                                Deletar
-                            </Nav.Link>
                         </Nav>
                         <Nav className="navbar-nav my-2 my-lg-0">
                             <Nav.Link as={Link} to="#">
@@ -95,7 +89,7 @@ export default function NavApp() {
                         </Card.Form>
                     </Card>
                 </Route>
-                <Route path="/atualizar">
+                <Route path="/atualizar/:id">
                     <Card>
                         <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
                         <Card.Form>
@@ -103,7 +97,7 @@ export default function NavApp() {
                         </Card.Form>
                     </Card>
                 </Route>
-                <Route path="/deletar">
+                <Route path="/deletar/:id">
                     <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
