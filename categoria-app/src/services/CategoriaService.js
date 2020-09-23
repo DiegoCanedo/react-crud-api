@@ -13,7 +13,7 @@ const incluir = (data) => {
 };
 
 const atualizar = (id, data) => {
-    return http.get(`/categoria/${id}`, data);
+    return http.put(`/categoria/${id}`, data);
 };
 
 const deletar = (id) => {

@@ -27,8 +27,10 @@ const Listar = () => {
               <Action as={Link} to={{pathname: '/atualizar', state: c.id}}>
                 <FontAwesomeIcon icon={faEdit} />
               </Action>
-              <Action as={Link} to={{pathname: '/deletar', state: c.id}}> 
+              <Action>
+                <Link to={`deletar/${c.id}`}>
                 <FontAwesomeIcon icon={faTrash} />
+                </Link> 
               </Action>
             </ContainerButtons>
             <Title>{c.nome}</Title>
