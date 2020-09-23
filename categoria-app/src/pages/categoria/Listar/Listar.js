@@ -24,7 +24,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Card } from "../../Card/Card";
+import { Card } from "../../../components/Card/Card";
 
 const Listar = () => {
   const [lista, setLista] = useState([]);
