@@ -2,13 +2,12 @@ import React, {useState, useEffect} from 'react';
 import { Container, Form, Input, Salvar } from './styles';
 import CategoriaService from '../../../services/CategoriaService';
 import Alert from "react-bootstrap/Alert";
-import {useLocation} from "react-router-dom";
+import {useRouteMatch} from "react-router-dom";
 
 
 const Index = () => {
 
-    var id = useLocation().state;
-
+    const {params} = useRouteMatch();
     const [categoria, setCategoria] = useState({});
     const [mensagem, setMensagem] = useState("");
     const [show, setShow] = useState(false);
@@ -16,7 +15,7 @@ const Index = () => {
     
 
     useEffect(() => {
-        CategoriaService.listarID(id)
+        CategoriaService.listarID(params.id)
           .then((response) => {
             setCategoria(response.data);
             console.log(response.data);
@@ -34,7 +33,7 @@ const Index = () => {
         event.preventDefault();
 
         console.log(categoria);
-        CategoriaService.atualizar(id, categoria)
+        CategoriaService.atualizar(params.id, categoria)
         .then((response) => {
            
             if(response.status === 200)
