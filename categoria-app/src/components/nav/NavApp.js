@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "./NavApp.css";
 
@@ -14,12 +15,13 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 import CategoriaService from "../../services/CategoriaService";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
+import Deletar from "../../pages/categoria/Deletar/index";
+import Login from "../../pages/login/index";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -67,7 +69,7 @@ export default function NavApp() {
                                 <FontAwesomeIcon icon={faHeart} className="mr-1" />
                                 Lista de Desejos
                             </Nav.Link>
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/login">
                                 <FontAwesomeIcon icon={faUser} className="mr-1" />
                                 Entrar
                             </Nav.Link>
@@ -80,27 +82,22 @@ export default function NavApp() {
             </Navbar>
             <Switch>
                 <Route path="/listar">
-                    <Card>
-                        <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
-                        <Card.Form>
-                            <Card.Button onClick="" />
-                            <ListarCategoria />
-                        </Card.Form>
-                    </Card>
+                    <ListarCategoria />
                 </Route>
                 <Route path="/atualizar/:id">
-                    <Card>
-                        <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
-                        <Card.Form>
-                            <Atualizar />
-                        </Card.Form>
-                    </Card>
+                    <Atualizar />
                 </Route>
                 <Route path="/Cadastrar">
                     <Cadastrar />
                 </Route>
-                <Route path="/">
+                <Route path="/login">
+                    <Login />
+                </Route>
+                <Route exact path="/">
                     <Home />
+                </Route>
+                <Route path="*">
+                    <NotFoundPage />
                 </Route>
             </Switch>
         </Router>
