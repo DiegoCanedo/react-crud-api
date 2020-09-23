@@ -19,7 +19,6 @@ import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
-import Deletar from "../../pages/categoria/Deletar/index";
 import Login from "../../pages/login/index";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
@@ -65,7 +64,7 @@ export default function NavApp() {
                             </Nav.Link>
                         </Nav>
                         <Nav className="navbar-nav my-2 my-lg-0">
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/lista-de-desejos">
                                 <FontAwesomeIcon icon={faHeart} className="mr-1" />
                                 Lista de Desejos
                             </Nav.Link>
@@ -73,7 +72,7 @@ export default function NavApp() {
                                 <FontAwesomeIcon icon={faUser} className="mr-1" />
                                 Entrar
                             </Nav.Link>
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/carrinho">
                                 <FontAwesomeIcon icon={faShoppingBasket} />
                             </Nav.Link>
                         </Nav>
@@ -86,9 +85,6 @@ export default function NavApp() {
                 </Route>
                 <Route path="/atualizar/:id">
                     <Atualizar />
-                </Route>
-                <Route path="/deletar/:id">
-                    <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
                     <Cadastrar />
