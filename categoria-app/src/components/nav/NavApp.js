@@ -17,7 +17,7 @@ import CategoriaService from "../../services/CategoriaService";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
-import Cadastrar from "../../pages/categoria/Criar/index";
+import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
 import Deletar from "../../pages/categoria/Deletar/index";
