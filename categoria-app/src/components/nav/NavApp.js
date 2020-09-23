@@ -20,7 +20,6 @@ import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
-import Deletar from "../../pages/categoria/Deletar/index";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -96,9 +95,6 @@ export default function NavApp() {
                             <Atualizar />
                         </Card.Form>
                     </Card>
-                </Route>
-                <Route path="/deletar/:id">
-                    <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
                     <Cadastrar />
