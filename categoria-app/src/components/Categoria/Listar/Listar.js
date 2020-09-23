@@ -27,10 +27,10 @@ const Listar = () => {
                     <Info key={index}>
                         <ContainerTitle>
                             <ContainerButtons>
-                                <Action as={Link} to={{ pathname: '/atualizar', state: c.id }}>
+                                <Action as={Link} to={`atualizar/${c.id}`}>
                                     <FontAwesomeIcon icon={faEdit} />
                                 </Action>
-                                <Action as={Link} to={{ pathname: '/deletar', state: c.id }}>
+                                <Action as={Link} to={`deletar/${c.id}`}>
                                     <FontAwesomeIcon icon={faTrash} />
                                 </Action>
                             </ContainerButtons>
