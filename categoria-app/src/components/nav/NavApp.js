@@ -89,7 +89,7 @@ export default function NavApp() {
                         </Card.Form>
                     </Card>
                 </Route>
-                <Route path="/atualizar">
+                <Route path="/atualizar/:id">
                     <Card>
                         <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
                         <Card.Form>
@@ -97,7 +97,7 @@ export default function NavApp() {
                         </Card.Form>
                     </Card>
                 </Route>
-                <Route path="/deletar">
+                <Route path="/deletar/:id">
                     <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
