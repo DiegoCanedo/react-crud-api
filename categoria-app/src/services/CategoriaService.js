@@ -6,13 +6,24 @@ const listarTodos = () => {
 
 const listarID = (id) => {
     return http.get(`/categoria/${id}`);
-}
+};
 
 const incluir = (data) => {
     return http.post(`/categoria`, data);
 };
 
+const atualizar = (id, data) => {
+    return http.get(`/categoria/${id}`, data);
+};
+
+const deletar = (id) => {
+    return http.delete(`/categoria/${id}`);
+};
+
 export default {
     listarTodos,
-    incluir
+    incluir,
+    atualizar,
+    deletar,
+    listarID,
 };

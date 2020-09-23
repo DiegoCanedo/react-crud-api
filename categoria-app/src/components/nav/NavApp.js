@@ -18,7 +18,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Card } from "../Card/Card";
 import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Criar/index";
+import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
+import Deletar from "../../pages/categoria/Deletar/index";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -97,11 +99,11 @@ export default function NavApp() {
                     <Card>
                         <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
                         <Card.Form>
-                            <ListarCategoria />
+                            <Atualizar />
                         </Card.Form>
                     </Card>
                 </Route>
-                <Route path="/Deletar">
+                <Route path="/deletar">
                     <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
@@ -113,12 +115,4 @@ export default function NavApp() {
             </Switch>
         </Router>
     );
-}
-
-function Atualizar() {
-    return <h2>Atualizar</h2>;
-}
-
-function Deletar() {
-    return <h2>Deletar</h2>;
 }

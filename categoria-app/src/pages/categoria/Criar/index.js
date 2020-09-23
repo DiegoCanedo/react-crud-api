@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { Input, Salvar, Container, Form } from './styles';
-import Service from '../../../services/CategoriaService';
 import CategoriaService from '../../../services/CategoriaService';
 import Alert from "react-bootstrap/Alert";
 
@@ -50,7 +49,7 @@ const Index = () => {
 
     return (
         <Container>
-             <Alert show={show} variant={variant}>{mensagem}</Alert>
+            <Alert show={show} variant={variant}>{mensagem}</Alert>
             <Form onSubmit={handleSubmit}>
                 <label for="fname">Nome da Categoria:</label>
                 <Input name="nome" onChange={e => handleInputChange(e)}  />
