@@ -39,7 +39,7 @@ export const ContainerButtons = styled.div`
 
 export const Action = styled.a`
   background-color: white;
-  color: #ff9259;
+  color: #ef8a4d;
   position: relative;
   flex-grow: 0;
   flex-shrink: 0;

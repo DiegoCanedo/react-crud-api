@@ -1,21 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 350px;
-  height: auto;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-`;
-
-export const Form = styled.form`
-    
-`
-
 export const Input = styled.input`
   width: 100%;
-  padding: 10px;
-  margin: 8px 5px;
+  padding: 10px 20px;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -24,7 +12,7 @@ export const Input = styled.input`
 
 export const Salvar = styled.button`
   width: 100%;
-  background-color: #354b60;
+  background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -33,3 +21,12 @@ export const Salvar = styled.button`
   cursor: pointer;
 `;
 
+export const Container = styled.div`
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+`;
+
+export const Form = styled.form`
+
+`
