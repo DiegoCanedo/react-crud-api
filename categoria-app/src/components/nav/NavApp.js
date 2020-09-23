@@ -52,7 +52,7 @@ export default function NavApp() {
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
                                 {lista.map((c, index) => (
                                     <NavDropdown.Item as={Link} to="#" key={index}>
-                                            {c.nome}
+                                            {c.nome.toUpperCase()}
                                     </NavDropdown.Item>
                                 ))}
                             </NavDropdown>
