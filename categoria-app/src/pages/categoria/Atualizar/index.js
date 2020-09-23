@@ -6,12 +6,10 @@ import Alert from "react-bootstrap/Alert";
 import { useRouteMatch } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
-
 import Navbar from "react-bootstrap/NavBar";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons"
-
 import { Card } from "../../../components/Card/Card";
 
 const Index = () => {
