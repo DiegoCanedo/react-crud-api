@@ -71,7 +71,7 @@ const Index = () => {
             <Container>
                 <Alert show={show} variant={variant}>{mensagem}</Alert>
                 <Card>
-                    <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
+                    <Card.Image src="https://metroui.org.ua/images/user_interface.svg" />
                     <Card.Form>
                         <Form onSubmit={handleSubmit}>
                             <label for="nome">Nome da Categoria:</label>

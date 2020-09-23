@@ -15,12 +15,12 @@ import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 import CategoriaService from "../../services/CategoriaService";
 
-import ListarCategoria from "../Categoria/Listar/Listar";
+import ListarCategoria from "../../pages/categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
 import Login from "../../pages/login/index";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
