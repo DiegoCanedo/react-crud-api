@@ -67,7 +67,7 @@ const Index = () => {
             <Alert show={show} variant={variant}>{mensagem}</Alert>
             <Form onSubmit={handleSubmit}>
                 <label for="fname">Id:</label>
-                <Input value={categoria.id} name="id" onChange={e => handleInputChange(e)} />
+                <Input disabled value={categoria.id} name="id" onChange={e => handleInputChange(e)} />
                 <label for="fname">Nome:</label>
                 <Input value={categoria.nome} name="nome" onChange={e => handleInputChange(e)} />
                 <label for="fname">Descricao:</label>
