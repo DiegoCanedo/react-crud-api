@@ -1,10 +1,10 @@
 import React from "react";
 
-import "./404.css";
+import "./NotFoundPage.css";
 
-import NotFoundIMG from "../../assets/images/error-404.png";
+import { Link } from 'react-router-dom';
 
-const 404 = () => {
+const NotFoundPage = () => {
     return (
         <div>
             <div className="container d-flex justify-content-center">
@@ -12,10 +12,11 @@ const 404 = () => {
                     <h1>404</h1>
                     <h2>Página não encontrada!</h2>
                     <p>A página que você procura não foi encontrada ou não está mais disponível.</p>
+                    <Link to="/">Voltar para Página Inicial</Link>
                 </div>
             </div>
         </div>
     )
 }
 
-export default 404;
+export default NotFoundPage;

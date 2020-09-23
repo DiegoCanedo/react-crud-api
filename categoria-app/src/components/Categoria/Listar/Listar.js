@@ -11,6 +11,8 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faInfo, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
+import { Card } from "../../Card/Card";
+
 const Listar = () => {
     const [lista, setLista] = useState([]);
 
@@ -24,36 +26,41 @@ const Listar = () => {
 
     return (
         <>
-            <Navbar className="navbar navbar-dark bg-header bg-breadcrumb" expand="lg">
+            <Navbar className="navbar navbar-dark mb-5 bg-header bg-breadcrumb" expand="lg">
                 <Container>
                     <Breadcrumb>
                         <Breadcrumb.Item href="/"><FontAwesomeIcon icon={faHome} /></Breadcrumb.Item>
                         <Breadcrumb.Item href="#">
                             Categorias
                         </Breadcrumb.Item>
-                        <Breadcrumb.Item active>Cadastrar</Breadcrumb.Item>
+                        <Breadcrumb.Item active>Listar categorias</Breadcrumb.Item>
                     </Breadcrumb>
                 </Container>
             </Navbar>
 
-            {lista.map((c, index) => (
-                <Container>
-                    <Info key={index}>
-                        <ContainerTitle>
-                            <ContainerButtons>
-                                <Action as={Link} to={`atualizar/${c.id}`}>
-                                    <FontAwesomeIcon icon={faEdit} />
-                                </Action>
-                                <Action as={Link} to={`deletar/${c.id}`}>
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </Action>
-                            </ContainerButtons>
-                            <Title>{c.nome}</Title>
-                        </ContainerTitle>
-                        <Descricao>{c.descricao}</Descricao>
-                    </Info>
-                </Container>
-            ))}
+            <Container>
+                <Card>
+                    <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
+                    <Card.Form>
+                        {lista.map((c, index) => (
+                            <Info key={index}>
+                                <ContainerTitle>
+                                    <ContainerButtons>
+                                        <Action as={Link} to={`atualizar/${c.id}`}>
+                                            <FontAwesomeIcon icon={faEdit} />
+                                        </Action>
+                                        <Action as={Link} to={`deletar/${c.id}`}>
+                                            <FontAwesomeIcon icon={faTrash} />
+                                        </Action>
+                                    </ContainerButtons>
+                                    <Title>{c.nome}</Title>
+                                </ContainerTitle>
+                                <Descricao>{c.descricao}</Descricao>
+                            </Info>
+                        ))}
+                    </Card.Form>
+                </Card>
+            </Container>
         </>
     );
 };
