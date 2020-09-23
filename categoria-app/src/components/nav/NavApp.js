@@ -64,7 +64,7 @@ export default function NavApp() {
                             </Nav.Link>
                         </Nav>
                         <Nav className="navbar-nav my-2 my-lg-0">
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/lista-de-desejos">
                                 <FontAwesomeIcon icon={faHeart} className="mr-1" />
                                 Lista de Desejos
                             </Nav.Link>
@@ -72,7 +72,7 @@ export default function NavApp() {
                                 <FontAwesomeIcon icon={faUser} className="mr-1" />
                                 Entrar
                             </Nav.Link>
-                            <Nav.Link as={Link} to="#">
+                            <Nav.Link as={Link} to="/carrinho">
                                 <FontAwesomeIcon icon={faShoppingBasket} />
                             </Nav.Link>
                         </Nav>
