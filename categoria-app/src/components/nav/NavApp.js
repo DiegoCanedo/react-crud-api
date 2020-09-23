@@ -19,7 +19,6 @@ import ListarCategoria from "../Categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
-import Deletar from "../../pages/categoria/Deletar/index";
 import Login from "../../pages/login/index";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
@@ -86,9 +85,6 @@ export default function NavApp() {
                 </Route>
                 <Route path="/atualizar/:id">
                     <Atualizar />
-                </Route>
-                <Route path="/deletar/:id">
-                    <Deletar />
                 </Route>
                 <Route path="/Cadastrar">
                     <Cadastrar />
