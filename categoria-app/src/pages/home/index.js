@@ -6,6 +6,7 @@ import "./style.css";
 import Container from "react-bootstrap/Container";
 import Banner from "../../components/Banner/Banner";
 import Busca from "../../components/BuscaCategoria/BuscaCategoria"
+import Produto from "../../components/Produtos/Listar"
 
 import QV01 from "../../assets/images/quick-view-01.gif";
 import QV02 from "../../assets/images/quick-view-02.gif";
@@ -15,6 +16,7 @@ const index = () => {
         <div>
         <Banner/>
         <Busca/>
+        <Produto/>
             <section className="mt-5 quickview">
                 <div className="container">
                     <div className="row">
