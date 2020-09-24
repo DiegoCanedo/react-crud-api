@@ -11,18 +11,19 @@ import {
 import Container from "react-bootstrap/Container";
 import Service from "../../services/ProdutoService";
 
-const Listar = (props) => {
-  const { id } = props;
+const Listar = ({id}) => {
   const [lista, setLista] = useState([]);
-  const [idCat, setIdCat] = useState(id);
-
-  console.log(id)
-
   useEffect(() => {
       Service.listarTodos().then((response) => {
+        if(id == "")
+        {
         setLista(response.data);
+        }
+        else{
+          setLista(response.data.filter(e => e.idCategoria == id))
+        }
       });
-    },[]);
+    },[id]);
 
   return (
     <Container fluid>
