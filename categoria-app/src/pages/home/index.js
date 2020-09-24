@@ -16,7 +16,6 @@ const index = () => {
         <div>
         <Banner/>
         <Busca/>
-        <Produto/>
             <section className="mt-5 quickview">
                 <div className="container">
                     <div className="row">
