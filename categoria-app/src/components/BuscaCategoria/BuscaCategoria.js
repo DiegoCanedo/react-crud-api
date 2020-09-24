@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Produto from '../Produtos/Listar'
 
 import "./BuscaCategoria.css";
 
@@ -38,8 +37,6 @@ const BuscaCategoria = () => {
                     </div>
                 </div>
             </section>
-            
-            <Produto id={selectedValue}/>
         </div>
     )
 }
