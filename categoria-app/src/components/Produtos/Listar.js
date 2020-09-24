@@ -26,7 +26,7 @@ const Listar = ({id}) => {
     },[id]);
 
   return (
-    <Container fluid>
+    <Container>
       <CardContainer>
         {lista.map((p, index) => (
           <Card key={index}>

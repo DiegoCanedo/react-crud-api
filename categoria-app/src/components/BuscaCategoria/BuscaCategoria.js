@@ -4,6 +4,7 @@ import Produto from '../Produtos/Listar'
 import "./BuscaCategoria.css";
 
 import CategoriaService from "../../services/CategoriaService";
+import Container from "react-bootstrap/esm/Container";
 
 const BuscaCategoria = () => {
     const [lista, setLista] = useState([]);
@@ -37,6 +38,7 @@ const BuscaCategoria = () => {
                     </div>
                 </div>
             </section>
+            
             <Produto id={selectedValue}/>
         </div>
     )
