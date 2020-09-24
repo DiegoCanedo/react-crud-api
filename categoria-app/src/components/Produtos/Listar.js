@@ -11,18 +11,22 @@ import {
 import Container from "react-bootstrap/Container";
 import Service from "../../services/ProdutoService";
 
-const Listar = (props) => {
+const Listar = ({id}) => {
   const [lista, setLista] = useState([]);
-  const { id } = props;
-
   useEffect(() => {
       Service.listarTodos().then((response) => {
+        if(id == "")
+        {
         setLista(response.data);
+        }
+        else{
+          setLista(response.data.filter(e => e.idCategoria == id))
+        }
       });
-    },[]);
+    },[id]);
 
   return (
-    <Container fluid>
+    <Container>
       <CardContainer>
         {lista.map((p, index) => (
           <Card key={index}>
