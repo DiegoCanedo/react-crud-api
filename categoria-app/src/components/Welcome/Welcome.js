@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -12,11 +12,9 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 const Welcome = () => {
-    // localStorage.setItem('@categoria-app/username', 'romulo');
-    // localStorage.removeItem('@categoria-app/username');
     const username = localStorage.getItem('@categoria-app/username');
 
-    const Sair = () => {
+    const Logout = () => {
         localStorage.removeItem('@categoria-app/username');
     }
 
@@ -34,7 +32,7 @@ const Welcome = () => {
 
                     <Dropdown.Divider />
 
-                    <NavDropdown.Item as={Link} to={Sair}>
+                    <NavDropdown.Item as={Link} to={Logout}>
                         Sair
                     </NavDropdown.Item>
                 </NavDropdown>
