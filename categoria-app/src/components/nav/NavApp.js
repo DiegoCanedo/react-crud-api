@@ -8,11 +8,6 @@ import Navbar from "react-bootstrap/NavBar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-
 import CategoriaService from "../../services/CategoriaService";
 
 import ListarCategoria from "../../pages/categoria/Listar/Listar";
@@ -21,6 +16,7 @@ import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
 import Login from "../../pages/login/index";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import Welcome from "../Welcome/Welcome";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -38,7 +34,7 @@ export default function NavApp() {
             <Navbar className="navbar navbar-dark bg-header" expand="lg">
                 <Container>
                     <Navbar.Brand className="navbar-brand d-flex align-items-center" as={Link} to="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" className="mr-2" viewBox="0 0 448 512" focusable="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" aria-hidden="true" className="mr-2" viewBox="0 0 448 512" focusable="false">
                             <path d="M.06 160v-.13l96 .06v-32C96.12 57.35 153.57 0 224.15 0s128 57.49 127.92 128.07V160h-64v-32a64 64 0 0 0-128-.08v32h64z" />
                             <path d="M.06 159.87l-.16 272a80 80 0 0 0 79.95 80.05l288 .16a80 80 0 0 0 80-80l.16-272zM128 247.94a24 24 0 1 1 24-24 24 24 0 0 1-24 24zm192 .12a24 24 0 1 1 24-24 24 24 0 0 1-24 24z" />
                         </svg>
@@ -52,30 +48,12 @@ export default function NavApp() {
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
                                 {lista.map((c, index) => (
                                     <NavDropdown.Item as={Link} to="#" key={index}>
-                                            {c.nome}
+                                            {c.nome.toUpperCase()}
                                     </NavDropdown.Item>
                                 ))}
                             </NavDropdown>
-                            <Nav.Link as={Link} to="/listar">
-                                Listar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/cadastrar">
-                                Cadastrar
-                            </Nav.Link>
                         </Nav>
-                        <Nav className="navbar-nav my-2 my-lg-0">
-                            <Nav.Link as={Link} to="/lista-de-desejos">
-                                <FontAwesomeIcon icon={faHeart} className="mr-1" />
-                                Lista de Desejos
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/login">
-                                <FontAwesomeIcon icon={faUser} className="mr-1" />
-                                Entrar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/carrinho">
-                                <FontAwesomeIcon icon={faShoppingBasket} />
-                            </Nav.Link>
-                        </Nav>
+                        <Welcome/>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
