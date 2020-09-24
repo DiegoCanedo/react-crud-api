@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Produto from '../Produtos/Listar'
 
 import "./BuscaCategoria.css";
 
@@ -31,7 +32,7 @@ const BuscaCategoria = () => {
                                 <select  defaultValue="" onChange={e => handleOnChange(e.target.value)} className="custom-select custom-select-lg">
                                     <option value="" >Todas as categorias</option>
                                     {lista.map((c, index) => (
-                                        <option key={index} value={c.nome}>{c.nome}</option>
+                                        <option key={index} value={c.id}>{c.nome}</option>
                                     ))}
                                 </select>
                             </div>
@@ -40,6 +41,8 @@ const BuscaCategoria = () => {
                     </div>
                 </div>
             </section>
+
+            <Produto id={selectedValue}/>
         </div>
     )
 }
