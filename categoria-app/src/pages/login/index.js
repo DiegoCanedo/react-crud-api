@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import  { Redirect } from 'react-router-dom';
 
 import "./style.css";
 
@@ -10,14 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons"
 import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faKey } from "@fortawesome/free-solid-svg-icons"
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
+    let history = useHistory();
+
     const [username, setUser] = useState('');
     const [password, setPass] = useState('');
 
     const login = () => {
         if (username == 'teste' && password == '123456') {
             localStorage.setItem('@categoria-app/username', username);
+            history.push('/listar');
         } else {
             console.log('falha na autenticação');
         }
