@@ -12,8 +12,11 @@ import Container from "react-bootstrap/Container";
 import Service from "../../services/ProdutoService";
 
 const Listar = (props) => {
-  const [lista, setLista] = useState([]);
   const { id } = props;
+  const [lista, setLista] = useState([]);
+  const [idCat, setIdCat] = useState(id);
+
+  console.log(id)
 
   useEffect(() => {
       Service.listarTodos().then((response) => {

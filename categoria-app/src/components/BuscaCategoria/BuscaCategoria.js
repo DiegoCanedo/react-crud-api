@@ -41,7 +41,6 @@ const BuscaCategoria = () => {
                     </div>
                 </div>
             </section>
-
             <Produto id={selectedValue}/>
         </div>
     )
