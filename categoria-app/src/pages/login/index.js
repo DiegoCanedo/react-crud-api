@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import "./style.css";
 
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
 import Navbar from "react-bootstrap/NavBar";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,13 +17,18 @@ const Login = () => {
 
     const [username, setUser] = useState('');
     const [password, setPass] = useState('');
+    const [mensagem, setMensagem] = useState("");
+    const [show, setShow] = useState(false);
+    const [variant, setVariant] = useState("");
 
     const login = () => {
-        if (username == 'teste' && password == '123456') {
+        if (username == 'teste' && password == '123456' || username == 'yuri' && password == '123456') {
             localStorage.setItem('@categoria-app/username', username);
             history.push('/listar');
         } else {
-            console.log('falha na autenticação');
+            setVariant("danger");
+            setMensagem("Usuário ou senha incorretos!");
+            setShow(true);
         }
     }
 
@@ -38,6 +44,8 @@ const Login = () => {
             </Navbar>
 
             <Container>
+                <Alert show={show} variant={variant}>{mensagem}</Alert>
+
                 <form className="form-signin">
                     <h1 className="h3 mb-3 font-weight-normal">Por favor, efetue o login</h1>
                     <label for="username" className="sr-only">Usuário</label>

@@ -3,7 +3,7 @@ import CategoriaService from '../../../services/CategoriaService';
 
 import { Form, Input, Salvar } from './styles';
 import Alert from "react-bootstrap/Alert";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/NavBar";
@@ -14,6 +14,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { Card } from "../../../components/Card/Card";
 
 const Index = () => {
+    let history = useHistory();
 
     const { params } = useRouteMatch();
     const [categoria, setCategoria] = useState({});
@@ -59,7 +60,8 @@ const Index = () => {
 
         setTimeout(() => {
             setShow(false);
-        }, 4000);
+            history.push('/listar');
+        }, 2000);
     }
 
     const handleInputChange = (event) => {
