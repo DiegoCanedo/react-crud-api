@@ -32,7 +32,6 @@ const Listar = () => {
           <CardAction>
           <ButtonPoduto>Comprar</ButtonPoduto>
           </CardAction>
-         
         </Card>
       ))}
       </CardContainer>
