@@ -91,11 +91,11 @@ const Index = () => {
                         <Form onSubmit={handleSubmit}>
                             <div class="form-group text-left">
                                 <label for="nome">Nome:</label>
-                                <Input name="nome" id="nome" onChange={e => handleInputChange(e)} />
+                                <Input name="nome" id="nome" placeholder={"Digite o nome da categoria"} value={nome} onChange={e => handleInputChange(e)} />
                             </div>
                             <div class="form-group text-left">
                                 <label for="descricao">Descrição:</label>
-                                <Input name="descricao" id="descricao" onChange={e => handleInputChange(e)} />
+                                <Input name="descricao" id="descricao" placeholder={"Digite a descrição da categoria"} value={descricao} onChange={e => handleInputChange(e)} />
                             </div>
                             <Salvar type="submit"><FontAwesomeIcon icon={faSave} /> Salvar</Salvar>
                         </Form>
