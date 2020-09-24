@@ -9,6 +9,10 @@
   background-color: #5d6f80 !important;
 }
 
+.form-control-plaintext {
+  border: solid transparent !important;
+}
+
 .App {
   text-align: center;
 }

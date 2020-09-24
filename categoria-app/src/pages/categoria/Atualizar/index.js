@@ -3,16 +3,18 @@ import CategoriaService from '../../../services/CategoriaService';
 
 import { Form, Input, Salvar } from './styles';
 import Alert from "react-bootstrap/Alert";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/NavBar";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons"
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { Card } from "../../../components/Card/Card";
 
 const Index = () => {
+    let history = useHistory();
 
     const { params } = useRouteMatch();
     const [categoria, setCategoria] = useState({});
@@ -58,7 +60,8 @@ const Index = () => {
 
         setTimeout(() => {
             setShow(false);
-        }, 4000);
+            history.push('/listar');
+        }, 2000);
     }
 
     const handleInputChange = (event) => {
@@ -83,16 +86,22 @@ const Index = () => {
             <Container>
                 <Alert show={show} variant={variant}>{mensagem}</Alert>
                 <Card>
-                    <Card.Image src="https://metroui.org.ua/images/book_lover.svg" />
+                    <Card.Image src="https://metroui.org.ua/images/code_development.svg" />
                     <Card.Form>
                         <Form onSubmit={handleSubmit}>
-                            <label for="fname">Id:</label>
-                            <Input disabled value={categoria.id} name="id" onChange={e => handleInputChange(e)} />
-                            <label for="fname">Nome:</label>
-                            <Input value={categoria.nome} name="nome" onChange={e => handleInputChange(e)} />
-                            <label for="fname">Descricao:</label>
-                            <Input value={categoria.descricao} name="descricao" onChange={e => handleInputChange(e)} />
-                            <Salvar type="submit">Atualizar</Salvar>
+                            <div class="form-group text-left">
+                                <label for="id">ID:</label>
+                                <Input name="id" id="id" value={categoria.id} onChange={e => handleInputChange(e)} disabled />
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="nome">Nome:</label>
+                                <Input name="nome" id="nome" value={categoria.nome} onChange={e => handleInputChange(e)} />
+                            </div>
+                            <div class="form-group text-left">
+                                <label for="descricao">Descrição:</label>
+                                <Input name="descricao" id="descricao" value={categoria.descricao} onChange={e => handleInputChange(e)} />
+                            </div>
+                            <Salvar type="submit"><FontAwesomeIcon icon={faCheck} /> Atualizar</Salvar>
                         </Form>
                     </Card.Form>
                 </Card>

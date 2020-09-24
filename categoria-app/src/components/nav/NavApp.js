@@ -8,19 +8,15 @@ import Navbar from "react-bootstrap/NavBar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Container from "react-bootstrap/Container";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
-
 import CategoriaService from "../../services/CategoriaService";
 
-import ListarCategoria from "../Categoria/Listar/Listar";
+import ListarCategoria from "../../pages/categoria/Listar/Listar";
 import Cadastrar from "../../pages/categoria/Cadastrar/index";
 import Atualizar from "../../pages/categoria/Atualizar/index";
 import Home from "../../pages/home/index";
 import Login from "../../pages/login/index";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import Welcome from "../Welcome/Welcome";
 
 export default function NavApp() {
     const [lista, setLista] = useState([]);
@@ -52,30 +48,12 @@ export default function NavApp() {
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
                                 {lista.map((c, index) => (
                                     <NavDropdown.Item as={Link} to="#" key={index}>
-                                            {c.nome}
+                                            {c.nome.toUpperCase()}
                                     </NavDropdown.Item>
                                 ))}
                             </NavDropdown>
-                            <Nav.Link as={Link} to="/listar">
-                                Listar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/cadastrar">
-                                Cadastrar
-                            </Nav.Link>
                         </Nav>
-                        <Nav className="navbar-nav my-2 my-lg-0">
-                            <Nav.Link as={Link} to="/lista-de-desejos">
-                                <FontAwesomeIcon icon={faHeart} className="mr-1" />
-                                Lista de Desejos
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/login">
-                                <FontAwesomeIcon icon={faUser} className="mr-1" />
-                                Entrar
-                            </Nav.Link>
-                            <Nav.Link as={Link} to="/carrinho">
-                                <FontAwesomeIcon icon={faShoppingBasket} />
-                            </Nav.Link>
-                        </Nav>
+                        <Welcome/>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

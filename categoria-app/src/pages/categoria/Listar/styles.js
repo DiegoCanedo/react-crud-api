@@ -4,11 +4,11 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #446392;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   max-width: 100%;
-  margin: 20px;
+  margin: 20px 0 20px;
   overflow: hidden;
   width: 400px;
 `;
@@ -17,8 +17,7 @@ export const ContainerTitle = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
-  background-color: #333956;
-  border-radius: 10px;
+  background-color: #344b60;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   max-width: 100%;
   width: 400px;
@@ -32,7 +31,7 @@ export const ContainerButtons = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-end;
-  top: 5px;
+  top: 8px;
   right: 5px;
   text-align: right;
   width: 150px;
@@ -40,23 +39,25 @@ export const ContainerButtons = styled.div`
 
 export const Action = styled.a`
   background-color: white;
-  color: #ff9259;
+  color: #ef8a4d;
   position: relative;
   flex-grow: 0;
   flex-shrink: 0;
-
   border-radius: 50%;
   text-align: center;
   background: #fff;
   cursor: pointer;
   transition: all 0.4s ease;
-
   display: inline-block;
-  line-height: 32px;
-  height: 30px;
-  width: 30px;
+  line-height: 21px;
+  height: 22px;
+  width: 22px;
   box-shadow: 0 5px 25px rgba(93, 70, 232, 0.15);
   margin: 0px 5px;
+
+  & > .svg-inline--fa.fa-w-18 {
+    width: 1em;
+  }
 `;
 
 export const Descricao = styled.h2`
@@ -64,7 +65,7 @@ export const Descricao = styled.h2`
   font-family: "Muli", sans-serif;
   font-size: 1.1em;
   font-weight: bold;
-  color: #fff;
+  color: #6b6a6a;
   margin: 10px 0;
   margin-left: 1.4em;
   text-align: start;
