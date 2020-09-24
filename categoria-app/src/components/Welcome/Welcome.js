@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useHistory } from "react-router-dom";
 
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -7,15 +7,17 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
 const Welcome = () => {
+    let history = useHistory();
+
     const username = localStorage.getItem('@categoria-app/username');
 
     const Logout = () => {
         localStorage.removeItem('@categoria-app/username');
+        history.push('/login');
     }
 
     if (username !== null) {
@@ -32,7 +34,7 @@ const Welcome = () => {
 
                     <Dropdown.Divider />
 
-                    <NavDropdown.Item as={Link} to={Logout}>
+                    <NavDropdown.Item onClick={Logout}>
                         Sair
                     </NavDropdown.Item>
                 </NavDropdown>
