@@ -13,18 +13,23 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faSave } from "@fortawesome/free-regular-svg-icons";
 
 import { Card } from "../../../components/Card/Card";
+
+  
 const Index = () => {
 
     const [categoria, setCategoria] = useState();
     const [mensagem, setMensagem] = useState("");
     const [show, setShow] = useState(false);
-    const [variant, setVariant] = useState("")
+    const [variant, setVariant] = useState("");
+    const [nome, setNome] = useState("");
+    const [descricao, setDescricao] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
         var data = {
             nome: categoria.nome,
             descricao: categoria.descricao,
+          
         };
 
         CategoriaService.incluir(data)
@@ -46,15 +51,24 @@ const Index = () => {
             setShow(false);
         }, 4000);
 
-        console.log(data);
+        console.log(data); 
+
+        setNome("")
+        setDescricao("")
+    
     };
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setCategoria({ ...categoria, [name]: value })
-        console.log(categoria)
+        if(name == "nome")
+        {setNome(value)}
+        else {setDescricao(value)}
+        
+        console.log(categoria)      
     };
 
+    
     return (
         <>
             <Navbar className="navbar navbar-dark mb-5 bg-header bg-breadcrumb" expand="lg">
@@ -90,6 +104,9 @@ const Index = () => {
             </Container>
         </>
     );
+
+    
+
 };
 
 export default Index;
