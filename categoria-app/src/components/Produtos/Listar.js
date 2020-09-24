@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {
   Card,
+  CardAction,
   Baner,
   NomeProduto,
   ButtonPoduto,
   DescricaoProduto,
+  CardContainer
 } from "./Styles";
 import Container from "react-bootstrap/Container";
 import Service from "../../services/ProdutoService";
@@ -19,17 +21,21 @@ const Listar = () => {
   }, []);
 
   return (
-    <Container>
-      {lista.map((p, index) => {
+    <Container fluid>
+      <CardContainer>
+      {lista.map((p, index) => (
         <Card key={index}>
-          <Baner>
-            <img src={p.fotoLink} />
+          <Baner src={p.fotoLink}>
           </Baner>
           <NomeProduto>{p.nome}</NomeProduto>
           <DescricaoProduto>{p.descricao}</DescricaoProduto>
+          <CardAction>
           <ButtonPoduto>Comprar</ButtonPoduto>
-        </Card>;
-      })}
+          </CardAction>
+         
+        </Card>
+      ))}
+      </CardContainer>
     </Container>
   );
 };
