@@ -15,7 +15,7 @@ overflow: hidden;
 export const Form = styled.div`
 padding: 30px;
 width: 100%;
-max-height: 550px;
+max-height: 450px;
 max-width: 550px;
 overflow: auto;
 `;
